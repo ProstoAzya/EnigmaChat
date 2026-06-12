@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "io.github.prostoazya.enigmachat.mixins",
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

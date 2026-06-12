@@ -1,20 +1,49 @@
+import xyz.jpenilla.resourcefactory.fabric.Environment
+
 plugins {
-    id("java")
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.loom)
+    alias(libs.plugins.resourcegen)
 }
 
-group = "fun.qvxnt"
-version = "1.0-SNAPSHOT"
+group = "io.github.prostoazya"
+version = "1.0"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    minecraft(libs.minecraft)
+    implementation(libs.loader)
+    implementation(libs.fabric)
 }
 
-tasks.test {
-    useJUnitPlatform()
+fabricModJson {
+    id = project.name.lowercase()
+    version = project.version.toString()
+    name = "Enigma chat"
+    description = ""
+    author("ProstoAzya")
+    environment = Environment.CLIENT
+
+    depends("fabricloader", ">=${libs.versions.loader.get()}")
+    depends("minecraft", "~${libs.versions.minecraft.get()}")
+    depends("java", ">=25")
+    depends("fabricapi", "*")
+
+    clientEntrypoint("${project.group}.${project.name.lowercase()}.EnigmaChatMod")
+
+    mixin("${id.get()}.mixins.json") {
+        this.environment = Environment.CLIENT
+    }
+}
+
+kotlin {
+    jvmToolchain(25)
+}
+
+sourceSets.main {
+    kotlin.srcDir("src")
+    resources.srcDir("resources")
 }
