@@ -11,12 +11,16 @@ version = "1.0"
 
 repositories {
     mavenCentral()
+    maven("https://maven.shedaniel.me/")
+    maven("https://maven.terraformersmc.com/releases/")
 }
 
 dependencies {
     minecraft(libs.minecraft)
     implementation(libs.loader)
     implementation(libs.fabric)
+    implementation(libs.clothconfig)
+    implementation(libs.modmenu)
 }
 
 fabricModJson {
