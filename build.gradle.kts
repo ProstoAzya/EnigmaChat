@@ -34,9 +34,10 @@ fabricModJson {
     depends("fabricloader", ">=${libs.versions.loader.get()}")
     depends("minecraft", "~${libs.versions.minecraft.get()}")
     depends("java", ">=25")
-    depends("fabricapi", "*")
+    depends("fabric-api", "*")
 
     clientEntrypoint("${project.group}.${project.name.lowercase()}.EnigmaChatMod")
+    entrypoint("modmenu", "$group.${project.name.lowercase()}.config.ModMenuIntegration")
 
     mixin("${id.get()}.mixins.json") {
         this.environment = Environment.CLIENT

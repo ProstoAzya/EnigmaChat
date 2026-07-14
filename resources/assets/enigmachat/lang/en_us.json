@@ -1,0 +1,10 @@
+{
+  "text.autoconfig.enigmachat.title": "Enigma Chat Settings",
+  "text.autoconfig.enigmachat.option.enabled": "Is enabled?",
+  "text.autoconfig.enigmachat.option.key": "Encryption key",
+  "text.enigmachat.error.empty_message": "Error! Message is empty.",
+  "text.enigmachat.error.empty_key": "Error! Encryption key is empty. Change it in mod's config.",
+  "text.enigmachat.enigma_symbol": "E",
+  "tooltip.enigmachat.encrypted_info": "This message has been encrypted by the Enigma Chat. Your data is protected.\n\nEncrypted message:\n",
+  "tooltip.enigmachat.decrypted_info": "This message has been decrypted by the Enigma Chat. Your data is protected.\n\nOriginal message:\n"
+}
