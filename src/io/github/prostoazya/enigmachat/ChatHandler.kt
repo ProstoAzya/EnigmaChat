@@ -8,8 +8,7 @@ import kotlin.properties.Delegates
 
 object ChatHandler {
     var enabled by Delegates.notNull<Boolean>()
-    lateinit var key: String
-    var lastTargetName: String = "?"
+    lateinit var encryptionKey: String
 
     fun register() {
         registerOutgoingListener()
@@ -33,7 +32,7 @@ object ChatHandler {
                     Minecraft.getInstance().gui.hud.chat.addClientSystemMessage(component)
                     return@register true
                 }
-                if (key.isEmpty()) {
+                if (encryptionKey.isEmpty()) {
                     val component =
                         Component.translatable("text.enigmachat.error.empty_key").withStyle(ChatFormatting.RED)
                     Minecraft.getInstance().gui.hud.chat.addClientSystemMessage(component)
@@ -42,9 +41,8 @@ object ChatHandler {
 
                 if (message.startsWith("[E]")) return@register true
 
-                val encryptedMessage = Encryption.encrypt(message, key)
+                val encryptedMessage = Encryption.encrypt(message, encryptionKey)
                 val newCommand = "$command $target [E]$encryptedMessage"
-                lastTargetName = target
                 Minecraft.getInstance().player?.connection?.sendCommand(newCommand)
                 return@register false
             }

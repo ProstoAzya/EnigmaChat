@@ -48,7 +48,7 @@ public class ChatComponentMixin {
                     int index = text.indexOf("[E]");
                     String encryptedPart = text.substring(index + 3).trim();
 
-                    String decryptedText = Encryption.INSTANCE.decrypt(encryptedPart, ChatHandler.INSTANCE.getKey());
+                    String decryptedText = Encryption.INSTANCE.decrypt(encryptedPart, ChatHandler.INSTANCE.getEncryptionKey());
 
                     Component decryptedPart = ChatWriter.INSTANCE.formatMessage(decryptedText, "[E]" + encryptedPart);
 

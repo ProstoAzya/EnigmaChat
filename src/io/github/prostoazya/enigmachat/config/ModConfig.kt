@@ -7,5 +7,6 @@ import me.shedaniel.autoconfig.annotation.Config
 class ModConfig: ConfigData {
     val enabled: Boolean = true
 
-    val key: String = "lemon"
+    val encryptionKey: String = "lemon"
+    val shuffleKey: String = "watermelon"
 }

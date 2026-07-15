@@ -1,6 +1,7 @@
 package io.github.prostoazya.enigmachat.config
 
 import io.github.prostoazya.enigmachat.ChatHandler
+import io.github.prostoazya.enigmachat.Encryption
 import me.shedaniel.autoconfig.AutoConfig
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer
 import net.minecraft.world.InteractionResult
@@ -21,6 +22,7 @@ object ConfigManager {
 
     private fun loadConfig(config: ModConfig) {
         ChatHandler.enabled = config.enabled
-        ChatHandler.key = config.key
+        ChatHandler.encryptionKey = config.encryptionKey
+        Encryption.updateAlphabet(config.shuffleKey)
     }
 }

@@ -1,10 +1,10 @@
 {
   "text.autoconfig.enigmachat.title": "Настройки Enigma Chat",
   "text.autoconfig.enigmachat.option.enabled": "Включен?",
-  "text.autoconfig.enigmachat.option.key": "Ключ шифрования",
+  "text.autoconfig.enigmachat.option.encryptionKey": "Ключ шифрования",
+  "text.autoconfig.enigmachat.option.shuffleKey": "Ключ перетасовки",
   "text.enigmachat.error.empty_message": "Ошибка! Сообщение пустое.",
   "text.enigmachat.error.empty_key": "Ошибка! Ключ шифрования пустой. Измените его в конфиге мода.",
   "text.enigmachat.enigma_symbol": "E",
-  "tooltip.enigmachat.encrypted_info": "Это сообщение было зашифровано Enigma Chat. Ваши данные в безопасности.\n\nЗашифрованное сообщение:\n",
-  "tooltip.enigmachat.decrypted_info": "Это сообщение было расшифровано Enigma Chat. Ваши данные в безопасности.\n\nОригинальное сообщение:\n"
+  "tooltip.enigmachat.encrypted_info": "Это сообщение было зашифровано Enigma Chat. Ваши данные в безопасности.\n\nЗашифрованное сообщение:\n"
 }

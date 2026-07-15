@@ -1,7 +1,21 @@
 package io.github.prostoazya.enigmachat
 
 object Encryption {
-    const val ALPHABET = """"Ъ:Iи%2спью-РИЭХ@щ!HЁ+ж(а4>О,ЛŌq.BaOВlzCU3pbns{`|Tjё'Ūāo<QдDшПĀфv=уūБPЯdhкZгЕКЮтМruФбЩ1fWЖ;СV0k#N58нхяīJōĒыАĪо7УзГR л*ЦчШAēЬе/]рK\Ы9eM[tЗЙ_xвGwESТэ)Fmiъ$~Чц^cНмйyД6}&gYL?X"""
+    const val BASE_ALPHABET = """ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ĀāĒēĪīŌōŪūЁАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяё"""
+
+    var alphabet: String = BASE_ALPHABET
+    private set
+
+    fun updateAlphabet(shuffleKey: String) {
+        if (shuffleKey.isEmpty()) {
+            alphabet = BASE_ALPHABET
+            return
+        }
+
+        val charList = Shuffle.shuffle(BASE_ALPHABET.map { it }.toMutableList(), shuffleKey)
+
+        alphabet = charList.joinToString("")
+    }
 
     fun encrypt(input: String, key: String): String {
        var encryptedString = ""
@@ -10,13 +24,13 @@ object Encryption {
             val inputChar = input[i]
             val keyChar = key[i % key.length]
 
-            if (!ALPHABET.contains(keyChar) || !ALPHABET.contains(inputChar)) {
+            if (!alphabet.contains(keyChar) || !alphabet.contains(inputChar)) {
                 encryptedString += inputChar
                 continue
             }
 
-            val newIndex = (ALPHABET.indexOf(inputChar) + ALPHABET.indexOf(keyChar)) % ALPHABET.length
-            encryptedString += ALPHABET[newIndex]
+            val newIndex = (alphabet.indexOf(inputChar) + alphabet.indexOf(keyChar)) % alphabet.length
+            encryptedString += alphabet[newIndex]
         }
 
         return encryptedString
@@ -29,13 +43,13 @@ object Encryption {
             val inputChar = input[i]
             val keyChar = key[i % key.length]
 
-            if (!ALPHABET.contains(keyChar) || !ALPHABET.contains(inputChar)) {
+            if (!alphabet.contains(keyChar) || !alphabet.contains(inputChar)) {
                 decryptedString += inputChar
                 continue
             }
 
-            val newIndex = (ALPHABET.indexOf(inputChar) - ALPHABET.indexOf(keyChar) + ALPHABET.length) % ALPHABET.length
-            decryptedString += ALPHABET[newIndex]
+            val newIndex = (alphabet.indexOf(inputChar) - alphabet.indexOf(keyChar) + alphabet.length) % alphabet.length
+            decryptedString += alphabet[newIndex]
         }
 
         return decryptedString
