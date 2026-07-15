@@ -4,7 +4,6 @@ import io.github.prostoazya.enigmachat.ChatHandler
 import me.shedaniel.autoconfig.AutoConfig
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer
 import net.minecraft.world.InteractionResult
-import org.slf4j.LoggerFactory
 
 object ConfigManager {
     fun init() {

@@ -2,7 +2,7 @@
   "required": true,
   "package": "io.github.prostoazya.enigmachat.mixins",
   "client": [
-
+    "ChatComponentMixin"
   ],
   "injectors": {
     "defaultRequire": 1
