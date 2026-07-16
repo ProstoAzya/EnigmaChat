@@ -3,8 +3,29 @@
   "text.autoconfig.enigmachat.option.enabled": "Is enabled?",
   "text.autoconfig.enigmachat.option.encryptionKey": "Encryption key",
   "text.autoconfig.enigmachat.option.shuffleKey": "Shuffle key",
+
+  "text.autoconfig.enigmachat.option.ewCommandSettings": "/ew command settings",
+  "text.autoconfig.enigmachat.option.ewCommandSettings.useEWCommand": "Use /ew command?",
+  "text.autoconfig.enigmachat.option.ewCommandSettings.replacementCommand": "Replacement command",
+
+  "text.autoconfig.enigmachat.option.ewCommandSettings.replacementCommand.@Tooltip[0]": "Which server-side command will /ew be replaced with",
+  "text.autoconfig.enigmachat.option.ewCommandSettings.replacementCommand.@Tooltip[1]": "Use the command available on your server",
+  "text.autoconfig.enigmachat.option.ewCommandSettings.replacementCommand.@Tooltip[2]": "Example: msg",
+
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings": "Built-in commands settings",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.useBuiltInCommands": "Use built-in commands?",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.replaceableCommands": "Replaceable built-in commands",
+
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.useBuiltInCommands.@Tooltip": "If enabled, built-in commands will be encrypted.",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.replaceableCommands.@Tooltip[0]": "Which server-side private message commands will be encrypted",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.replaceableCommands.@Tooltip[1]": "Use a space to separate",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.replaceableCommands.@Tooltip[2]": "Example: msg",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.replaceableCommands.@Tooltip[3]": "Example: w whisper msg",
+
+  "text.enigmachat.error.default": "Error! ",
   "text.enigmachat.error.empty_message": "Error! Message is empty.",
   "text.enigmachat.error.empty_key": "Error! Encryption key is empty. Change it in mod's config.",
+
   "text.enigmachat.enigma_symbol": "E",
   "tooltip.enigmachat.encrypted_info": "This message has been encrypted by the Enigma Chat. Your data is protected.\n\nEncrypted message:\n"
 }

@@ -3,8 +3,29 @@
   "text.autoconfig.enigmachat.option.enabled": "Включен?",
   "text.autoconfig.enigmachat.option.encryptionKey": "Ключ шифрования",
   "text.autoconfig.enigmachat.option.shuffleKey": "Ключ перетасовки",
+
+  "text.autoconfig.enigmachat.option.ewCommandSettings": "Настройки команды /ew",
+  "text.autoconfig.enigmachat.option.ewCommandSettings.useEWCommand": "Использовать команду /ew?",
+  "text.autoconfig.enigmachat.option.ewCommandSettings.replacementCommand": "Команда замены",
+
+  "text.autoconfig.enigmachat.option.ewCommandSettings.replacementCommand.@Tooltip[0]": "На какую серверную команду ЛС будет заменяться /ew",
+  "text.autoconfig.enigmachat.option.ewCommandSettings.replacementCommand.@Tooltip[1]": "Используйте команду, которая есть на вашем сервере",
+  "text.autoconfig.enigmachat.option.ewCommandSettings.replacementCommand.@Tooltip[2]": "Пример: msg",
+
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings": "Настройки встроенных команд",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.useBuiltInCommands": "Использовать встроенные команды?",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.replaceableCommands": "Заменяемые встроенные команды",
+
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.useBuiltInCommands.@Tooltip": "Если включено, встроенные команды будут шифроваться",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.replaceableCommands.@Tooltip[0]": "Какие серверные команды ЛС будут шифроваться",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.replaceableCommands.@Tooltip[1]": "Для разделения используйте пробел",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.replaceableCommands.@Tooltip[2]": "Пример: msg",
+  "text.autoconfig.enigmachat.option.builtInCommandsSettings.replaceableCommands.@Tooltip[3]": "Пример: w whisper msg",
+
+  "text.enigmachat.error.default": "Ошибка! ",
   "text.enigmachat.error.empty_message": "Ошибка! Сообщение пустое.",
   "text.enigmachat.error.empty_key": "Ошибка! Ключ шифрования пустой. Измените его в конфиге мода.",
+
   "text.enigmachat.enigma_symbol": "E",
   "tooltip.enigmachat.encrypted_info": "Это сообщение было зашифровано Enigma Chat. Ваши данные в безопасности.\n\nЗашифрованное сообщение:\n"
 }

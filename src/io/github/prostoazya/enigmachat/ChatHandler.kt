@@ -10,6 +10,9 @@ object ChatHandler {
     var enabled by Delegates.notNull<Boolean>()
     lateinit var encryptionKey: String
 
+    var builtInCommandsEnabled by Delegates.notNull<Boolean>()
+    lateinit var replaceableCommands: String
+
     fun register() {
         registerOutgoingListener()
     }
@@ -17,8 +20,11 @@ object ChatHandler {
     private fun registerOutgoingListener() {
         ClientSendMessageEvents.ALLOW_COMMAND.register { command ->
             if (!enabled) return@register true
+            if (!builtInCommandsEnabled) return@register true
 
-            val regex = """^(msg|tell|w|reply|r)\s+([^\s]+)\s+(.+)$""".toRegex()
+            val formattedCommands = replaceableCommands.trim().replace(Regex("\\s+"), "|")
+
+            val regex = """^($formattedCommands)\s+([^\s]+)\s+(.+)$""".toRegex()
             val matchResult = regex.find(command)
 
             if (matchResult?.groupValues?.size == 4) {

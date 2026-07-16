@@ -8,5 +8,6 @@ class EnigmaChatMod: ClientModInitializer {
         ConfigManager.init()
 
         ChatHandler.register()
+        EWCommand.register()
     }
 }
