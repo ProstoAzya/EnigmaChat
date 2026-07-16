@@ -7,7 +7,7 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallba
 import net.fabricmc.fabric.api.client.command.v2.ClientCommands
 import net.minecraft.ChatFormatting
 import net.minecraft.client.Minecraft
-import net.minecraft.commands.arguments.GameProfileArgument
+import net.minecraft.commands.SharedSuggestionProvider
 import net.minecraft.network.chat.Component
 import kotlin.properties.Delegates
 
@@ -19,7 +19,10 @@ object EWCommand {
         ClientCommandRegistrationCallback.EVENT.register { dispatcher, _ ->
             dispatcher.register(
                 ClientCommands.literal("ew")
-                    .then(ClientCommands.argument("target", GameProfileArgument.gameProfile())
+                    .then(ClientCommands.argument("target", StringArgumentType.word())
+                        .suggests { context, builder ->
+                            SharedSuggestionProvider.suggest(context.source.onlinePlayerNames, builder)
+                        }
                         .then(ClientCommands.argument("message", StringArgumentType.greedyString())
                             .executes { context ->
                                 val player = Minecraft.getInstance().player ?: return@executes 0
@@ -28,8 +31,7 @@ object EWCommand {
                                 if (!enabled) return@executes 0
 
                                 try {
-                                    val profiles = context.getArgument("target", Collection::class.java) as Collection<*>
-                                    val target = (profiles.iterator().next() as com.mojang.authlib.GameProfile).name
+                                    val target = StringArgumentType.getString(context, "target")
                                     val message = StringArgumentType.getString(context, "message")
 
                                     if (message.isEmpty()) {
