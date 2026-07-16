@@ -17,13 +17,13 @@ class ModConfig: ConfigData {
     @ConfigEntry.Gui.CollapsibleObject
     val builtInCommandsSettings: BuiltInCommandsSettings = BuiltInCommandsSettings()
 
-    class EWCommandSettings() {
+    class EWCommandSettings {
         val useEWCommand: Boolean = true
         @ConfigEntry.Gui.Tooltip(count = 3)
         var replacementCommand: String = "msg"
     }
 
-    class BuiltInCommandsSettings() {
+    class BuiltInCommandsSettings {
         @ConfigEntry.Gui.Tooltip(count = 1)
         val useBuiltInCommands: Boolean = false
         @ConfigEntry.Gui.Tooltip(count = 4)
